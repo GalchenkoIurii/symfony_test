@@ -17,7 +17,9 @@
         <li>{{ second_post }}</li>
     </ul>
     <ul>
-
+        {% for post in third_post %}
+            <li>{{ post }}</li>
+        {% endfor %}
     </ul>
 </div>
 {% endblock %}
