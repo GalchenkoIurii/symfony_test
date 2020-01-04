@@ -22,11 +22,13 @@ class MainController extends AbstractController
      */
     public function blog()
     {
+        $posts = ['first string', 'second string', 'third string'];
+
         return $this->render('main/blog.html.twig', [
             'controller_name' => 'MainController',
             'first_post'      => 'This is first post',
             'second_post'     => 'This is second post',
-            'third_post'      => ['first string', 'second string', 'third string'],
+            'third_post'      => $posts,
         ]);
     }
 }
