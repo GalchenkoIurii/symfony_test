@@ -24,6 +24,9 @@ class MainController extends AbstractController
     {
         return $this->render('main/blog.html.twig', [
             'controller_name' => 'MainController',
+            'first_post'      => 'This is first post',
+            'second_post'     => 'This is second post',
+            'third_post'      => ['first string', 'second string', 'third string'],
         ]);
     }
 }
