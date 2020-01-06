@@ -35,10 +35,20 @@ class MainController extends AbstractController
     }
 
     /**
+     * @Route("/blog/{slug}", name="blog_post")
+     */
+    public function blog_post(string $slug)
+    {
+        return $this->render('main/post.html.twig', [
+            'post_title' => $slug,
+        ]);
+    }
+
+    /**
      * @Route("/blog/list", name="blog_list")
      */
     public function blog_list()
     {
-
+        $response = new Response();
     }
 }
