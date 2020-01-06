@@ -35,6 +35,16 @@ class MainController extends AbstractController
     }
 
     /**
+     * @Route("/blog/{page}", name="blog_list", requirements={"page"="\d+"})
+     */
+    public function blog_list(int $page)
+    {
+        return $this->render('main/blog.html.twig', [
+            'page' => $page,
+        ]);
+    }
+
+    /**
      * @Route("/blog/{slug}", name="blog_post")
      */
     public function blog_post(string $slug)
@@ -44,11 +54,5 @@ class MainController extends AbstractController
         ]);
     }
 
-    /**
-     * @Route("/blog/list", name="blog_list")
-     */
-    public function blog_list()
-    {
-        $response = new Response();
-    }
+
 }
