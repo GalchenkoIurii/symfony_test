@@ -36,15 +36,15 @@ class MainController extends AbstractController
         ]);
     }
 
-    /**
-     * @Route("/blog/{page}", name="blog_list", requirements={"page"="\d+"})
-     */
-    public function blog_list(int $page)
-    {
-        return $this->render('main/blog.html.twig', [
-            'page' => $page,
-        ]);
-    }
+//    /**
+//     * @Route("/blog/{page}", name="blog_list", requirements={"page"="\d+"})
+//     */
+//    public function blog_list(int $page)
+//    {
+//        return $this->render('main/blog.html.twig', [
+//            'page' => $page,
+//        ]);
+//    }
 
     /**
      * @Route("/blog/{slug}", name="blog_post")
@@ -52,7 +52,9 @@ class MainController extends AbstractController
     public function blog_post(Notes $slug)
     {
         return $this->render('main/post.html.twig', [
-            'post_title' => $slug,
+            'post_title'       => $slug->getTitle(),
+            'post_description' => $slug->getDescription(),
+            'post_created'     => $slug->getCreated(),
         ]);
     }
 
