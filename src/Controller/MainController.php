@@ -2,6 +2,8 @@
 
 namespace App\Controller;
 
+use App\Entity\Notes;
+
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\Routing\Annotation\Route;
 
@@ -47,7 +49,7 @@ class MainController extends AbstractController
     /**
      * @Route("/blog/{slug}", name="blog_post")
      */
-    public function blog_post(string $slug)
+    public function blog_post(Notes $slug)
     {
         return $this->render('main/post.html.twig', [
             'post_title' => $slug,
