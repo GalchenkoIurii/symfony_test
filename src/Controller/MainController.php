@@ -3,8 +3,9 @@
 namespace App\Controller;
 
 use App\Entity\Notes;
-
+use App\Form\NotesType;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Routing\Annotation\Route;
 
 use Symfony\Component\HttpFoundation\Response;
@@ -14,10 +15,15 @@ class MainController extends AbstractController
     /**
      * @Route("/", name="index")
      */
-    public function index()
+    public function index(Request $request)
     {
+        $note = new Notes();
+        $form = $this->createForm(NotesType::class, $note);
+        $form->handleRequest($request);
+
         return $this->render('main/index.html.twig', [
             'controller_name' => 'MainController',
+            'form'            => $form->createView()
         ]);
     }
 
