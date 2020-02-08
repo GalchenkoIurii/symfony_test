@@ -3,12 +3,22 @@
     <head>
         <meta charset="UTF-8">
         <title>{% block title %}{% endblock %}</title>
-        {% block stylesheets %}{% endblock %}
+        {% block stylesheets %}
+            <style>
+                header { min-height: 100px; background-color: darkolivegreen }
+                footer { min-height: 200px; background-color: #868686 }
+                .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
+            </style>
+        {% endblock %}
     </head>
     <body>
-        {% block header %}Header{% endblock %}
+        {% block header %}
+            <header>Header</header>
+        {% endblock %}
         {% block body %}{% endblock %}
-        {% block footer %}Footer{% endblock %}
+        {% block footer %}
+            <footer>Footer</footer>
+        {% endblock %}
         {% block javascripts %}{% endblock %}
     </body>
 </html>
