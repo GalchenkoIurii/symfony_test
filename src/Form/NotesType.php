@@ -20,12 +20,15 @@ class NotesType extends AbstractType
             ->add('title', TextType::class)
             ->add('description', TextareaType::class)
             ->add('status', ChoiceType::class, [
-                'choices' => [
+                'choices'  => [
                     'Active'   => true,
                     'Inactive' => false
-                ]
+                ],
+                'required' => false
             ])
-            ->add('created', DateTimeType::class)
+            ->add('created', DateTimeType::class, [
+                'required' => false
+            ])
             ->add('submit', SubmitType::class)
         ;
     }

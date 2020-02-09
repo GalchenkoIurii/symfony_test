@@ -28,6 +28,8 @@ class MainController extends AbstractController
 
             $em->persist($note);
             $em->flush();
+
+            return $this->redirectToRoute('index');
         }
 
         $notes = $em->getRepository(Notes::class)->findAll();
