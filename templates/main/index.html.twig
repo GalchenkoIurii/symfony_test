@@ -29,7 +29,7 @@
                     <td>{{ note.title }}</td>
                     <td>{{ note.description }}</td>
                     <td>{{ note.status }}</td>
-                    <td><a href="" class="btn btn-danger">Delete Note</a></td>
+                    <td><a href="{{ path('remove_note', {'note': note.id}) }}" class="btn btn-danger">Delete Note</a></td>
                 </tr>
             {% endfor %}
             </tbody>

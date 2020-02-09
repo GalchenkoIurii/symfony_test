@@ -82,6 +82,10 @@ class MainController extends AbstractController
      * @Route("/remove/{note}", name="remove_note")
      */
     public function removeNote(Notes $note, Request $request) {
+        $em = $this->getDoctrine()->getManager();
+        $em->remove($note);
+        $em->flush();
 
+        return $this->redirectToRoute('index');
     }
 }
