@@ -19,6 +19,20 @@ class MainController extends AbstractController
     {
         $em = $this->getDoctrine()->getManager();
 
+        $notes = $em->getRepository(Notes::class)->findAll();
+
+        return $this->render('main/index.html.twig', [
+            'notes'           => $notes
+        ]);
+    }
+
+    /**
+     * @Route("/add", name="add")
+     */
+    public function add(Request $request)
+    {
+        $em = $this->getDoctrine()->getManager();
+
         $note = new Notes();
         $form = $this->createForm(NotesType::class, $note);
         $form->handleRequest($request);
@@ -29,30 +43,11 @@ class MainController extends AbstractController
             $em->persist($note);
             $em->flush();
 
-            return $this->redirectToRoute('index');
+            return $this->redirectToRoute('add');
         }
 
-        $notes = $em->getRepository(Notes::class)->findAll();
-
-        return $this->render('main/index.html.twig', [
-            'controller_name' => 'MainController',
+        return $this->render('main/add.html.twig', [
             'form'            => $form->createView(),
-            'notes'           => $notes
-        ]);
-    }
-
-    /**
-     * @Route("/blog", name="blog")
-     */
-    public function blog()
-    {
-        $posts = ['first string', 'second string', 'third string'];
-
-        return $this->render('main/blog.html.twig', [
-            'controller_name' => 'MainController',
-            'first_post'      => 'This is first post',
-            'second_post'     => 'This is second post',
-            'third_post'      => $posts,
         ]);
     }
 
@@ -61,7 +56,7 @@ class MainController extends AbstractController
 //     */
 //    public function blog_list(int $page)
 //    {
-//        return $this->render('main/blog.html.twig', [
+//        return $this->render('main/add.html.twig', [
 //            'page' => $page,
 //        ]);
 //    }

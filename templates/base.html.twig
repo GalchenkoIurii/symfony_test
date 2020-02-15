@@ -16,7 +16,14 @@
     </head>
     <body>
         {% block header %}
-            <header>Header</header>
+            <header>
+                <nav>
+                    <ul>
+                        <li><a href="{{ path('index') }}">Home</a></li>
+                        <li><a href="{{ path('add') }}">Add New Note</a></li>
+                    </ul>
+                </nav>
+            </header>
         {% endblock %}
         {% block body %}{% endblock %}
         {% block footer %}
