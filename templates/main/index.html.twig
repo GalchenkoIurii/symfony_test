@@ -5,17 +5,17 @@
 {% block body %}
 
 <div class="container">
-    <h1>Notes</h1>
-
+    <div class="content">
+        <h1>Notes</h1>
         <table class="table">
             <thead class="thead-dark">
-                <tr>
-                    <th scope="col">Id</th>
-                    <th scope="col">Title</th>
-                    <th scope="col">Description</th>
-                    <th scope="col">Status</th>
-                    <th scope="col">Action</th>
-                </tr>
+            <tr>
+                <th scope="col">Id</th>
+                <th scope="col">Title</th>
+                <th scope="col">Description</th>
+                <th scope="col">Status</th>
+                <th scope="col">Action</th>
+            </tr>
             </thead>
             <tbody>
             {% for note in notes %}
@@ -29,5 +29,6 @@
             {% endfor %}
             </tbody>
         </table>
+    </div>
 </div>
 {% endblock %}

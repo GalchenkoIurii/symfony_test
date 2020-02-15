@@ -7,10 +7,11 @@
             <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
             <style>
                 .navbar { min-height: 100px; }
-                /*footer nav { min-height: 200px; background-color: #222; color: #fff; }*/
-                /*h1 { margin-top: 50px; margin-bottom: 100px; text-align: center; }*/
-                /*.wrapper { margin: 1em auto 3em; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }*/
-                /*.form { margin-bottom: 100px; }*/
+                footer .navbar { min-height: 200px; }
+                h1 { margin-top: 50px; margin-bottom: 100px; text-align: center; }
+                .content { margin: 1em auto 3em; }
+                .form { width: 80%; margin: 0 auto 100px; }
+                .table { width: 80%; margin: 0 auto 100px; }
             </style>
         {% endblock %}
     </head>
@@ -18,14 +19,14 @@
         {% block header %}
             <header class="bg-primary">
                 <div class="container">
-                    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+                    <nav class="navbar navbar-expand-lg navbar-dark">
                         <a class="navbar-brand" href="{{ path('index') }}">Logo</a>
                         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
                             <span class="navbar-toggler-icon"></span>
                         </button>
                         <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
                             <div class="navbar-nav">
-                                <a class="nav-item nav-link active" href="{{ path('index') }}">Home <span class="sr-only">(current)</span></a>
+                                <a class="nav-item nav-link" href="{{ path('index') }}">Home</a>
                                 <a class="nav-item nav-link" href="{{ path('add') }}">Add New Note</a>
                             </div>
                         </div>
@@ -35,12 +36,12 @@
         {% endblock %}
         {% block body %}{% endblock %}
         {% block footer %}
-            <footer>
+            <footer class="bg-dark">
                 <div class="container">
-                    <nav class="navbar-expand-lg navbar-dark bg-dark">
+                    <nav class="navbar navbar-expand-lg navbar-dark">
                         <a class="navbar-brand" href="{{ path('index') }}">Logo</a>
                             <div class="navbar-nav">
-                                <a class="nav-item nav-link active" href="{{ path('index') }}">Home <span class="sr-only">(current)</span></a>
+                                <a class="nav-item nav-link" href="{{ path('index') }}">Home</a>
                                 <a class="nav-item nav-link" href="{{ path('add') }}">Add New Note</a>
                             </div>
                     </nav>
