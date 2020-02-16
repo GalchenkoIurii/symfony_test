@@ -23,7 +23,15 @@
                     <th scope="row">{{ note.id }}</th>
                     <td>{{ note.title }}</td>
                     <td>{{ note.description }}</td>
-                    <td>{{ note.status }}</td>
+                    <td>
+                        {% if note.status == 1 %}
+                        New
+                        {% elseif note.status == 2 %}
+                        In Progress
+                        {% elseif note.status == 3 %}
+                        Done
+                        {% endif %}
+                    </td>
                     <td><a href="{{ path('remove_note', {'note': note.id}) }}" class="btn btn-danger">Delete Note</a></td>
                 </tr>
             {% endfor %}

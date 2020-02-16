@@ -33,7 +33,7 @@ class Notes
      * @Assert\NotBlank()
      * @ORM\Column(type="smallint", nullable=true)
      */
-    private $status;
+    private $status = 1;
 
     /**
      * @Assert\NotBlank()
