@@ -25,11 +25,11 @@
                     <td>{{ note.description }}</td>
                     <td>
                         {% if note.status == 1 %}
-                        New
+                        <span class="status status-new">New</span>
                         {% elseif note.status == 2 %}
-                        In Progress
+                        <span class="status status-in-progress">In Progress</span>
                         {% elseif note.status == 3 %}
-                        Done
+                        <span class="status status-done">Done</span>
                         {% endif %}
                     </td>
                     <td><a href="{{ path('remove_note', {'note': note.id}) }}" class="btn btn-danger">Delete Note</a></td>
